@@ -30,10 +30,7 @@ void loop()
     sensorReadingX = analogRead(xOut);
     sensorReadingY = analogRead(yOut);
     sensorReadingZ = analogRead(zOut);
-    
-    b[0] = 0;
-    b[1] = 0;
-    
+
     ble_write('X');
     ble_write(':');
     str = String(sensorReadingX);
