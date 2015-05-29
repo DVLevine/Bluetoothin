@@ -19,9 +19,6 @@ void setup()
   ble_begin();
 }
 
-unsigned char buf[16] = {0};
-unsigned char len = 0;
-
 char b[3] = {0};
 String str;
 int length = 0;
@@ -53,17 +50,9 @@ void loop()
     prepAndWrite(str,b);
   }
 
+  //takes care of low level bluetooth stuff. A Redbear special function.
   ble_do_events();
   
-  if ( ble_available() )
-  {
-    while ( ble_available() )
-    {
-      Serial.write(ble_read());
-    }
-    
-    Serial.println();
-  }
  
  // Processor is 8 Mhz
  // Reduce time to sensor 16 kHz
