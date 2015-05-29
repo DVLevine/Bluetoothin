@@ -60,6 +60,7 @@ void loop()
   delay(62.375);  
 }
 
+// A Dan function. preps input ints as chars and writes them to the bluetooth line.
 void prepAndWrite(String str, char * b){
   length = str.length(); 
   str.toCharArray(b,3);
